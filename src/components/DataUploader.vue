@@ -1,11 +1,11 @@
 <template>
   <div class="min-h-screen bg-gray-100 flex items-center justify-center p-4">
     <div class="w-full max-w-md bg-white rounded-2xl shadow-lg p-5 space-y-4">
-      <h2 class="text-xl font-semibold text-center">Measurement Input</h2>
+      <h2 class="text-xl font-semibold text-center">BNE Projekt FHNW: Messwerte erfassen</h2>
 
       <!-- Location -->
       <div>
-        <label class="block text-lg font-medium mb-2">Select location</label>
+        <label class="block text-lg font-medium mb-2">Wo wird gemessen?</label>
         <div class="grid grid-cols-1 gap-4">
           <button
             type="button"
