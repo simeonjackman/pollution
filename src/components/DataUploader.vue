@@ -92,7 +92,7 @@
 
     </div>
     <footer class="w-full max-w-md mt-4 text-center text-xs text-gray-400 px-2">
-      Projekt von Iryna Roth, Nina Brunner und Simeon Jackan zum Kurs WBWA110 Bildung für Nachhaltige Entwicklung fördern am Gymnasium
+      Projekt von Iryna Roth, Nina Brunner und Simeon Jackman zum Kurs WBWA110 Bildung für Nachhaltige Entwicklung fördern am Gymnasium
     </footer>
   </div>
 </template>
