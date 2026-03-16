@@ -63,6 +63,16 @@
       <div v-if="status" :class="['rounded-xl p-3 text-sm', status.ok ? 'bg-green-50 text-green-800' : 'bg-red-50 text-red-800']">
         {{ status.message }}
       </div>
+
+      <hr class="border-gray-200" />
+
+      <!-- Download -->
+      <button
+        @click="downloadData"
+        class="w-full bg-gray-700 text-white rounded-xl p-3 text-base"
+      >
+        Alle Daten dieses Projekts Herunterladen
+      </button>
     </div>
   </div>
 </template>
@@ -74,6 +84,26 @@ const senseBoxId = ref('')
 const sensorId = ref('')
 const value = ref(null)
 const status = ref(null)
+
+const BOX_IDS = ['10', '25', '92']
+
+function downloadData() {
+  const now = new Date()
+  const oneMonthAgo = new Date(now)
+  oneMonthAgo.setMonth(oneMonthAgo.getMonth() - 1)
+
+  const toDate = now.toISOString()
+  const fromDate = oneMonthAgo.toISOString()
+
+  const params = new URLSearchParams({
+    'boxId': BOX_IDS.join(','),
+    'from-date': fromDate,
+    'to-date': toDate,
+  })
+
+  const url = `https://api.opensensemap.org/boxes/data?${params}`
+  window.open(url, '_blank')
+}
 
 async function submit() {
   status.value = null
