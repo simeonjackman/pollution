@@ -76,7 +76,7 @@ const status = ref(null)
 async function submit() {
   status.value = null
   try {
-    const res = await fetch('/api/measurement', {
+    const res = await fetch('https://pollution-sigma.vercel.app/api/measurement', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
