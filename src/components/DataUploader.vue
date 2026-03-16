@@ -13,17 +13,17 @@
             type="button"
             @click="senseBoxId = '10'"
             :class="['p-4 rounded-2xl border-2 text-lg font-semibold', senseBoxId==='10' ? 'bg-blue-600 text-white border-blue-600' : 'bg-gray-800 text-white border-gray-300']"
-          >Wald</button>
+          >🌲 Wald</button>
           <button
             type="button"
             @click="senseBoxId = '25'"
             :class="['p-4 rounded-2xl border-2 text-lg font-semibold', senseBoxId==='25' ? 'bg-blue-600 text-white border-blue-600' : 'bg-gray-800 text-white border-gray-300']"
-          >Strasse</button>
+          >🚗 Strasse</button>
           <button
             type="button"
             @click="senseBoxId = '92'"
             :class="['p-4 rounded-2xl border-2 text-lg font-semibold', senseBoxId==='92' ? 'bg-blue-600 text-white border-blue-600' : 'bg-gray-800 text-white border-gray-300']"
-          >Siedlungsgebiet</button>
+          >🏠 Siedlungsgebiet</button>
         </div>
       </div>
 
@@ -52,9 +52,9 @@
 
       <!-- Button -->
       <button
-        :disabled="!senseBoxId || !sensorId || value === null"
+        v-if="senseBoxId && sensorId && value !== null"
         @click="submit"
-        class="w-full bg-green-600 text-white rounded-xl p-3 text-base disabled:opacity-40"
+        class="w-full bg-green-600 text-white rounded-xl p-3 text-base"
       >
         Messung einreichen
       </button>
@@ -71,7 +71,7 @@
         @click="downloadData"
         class="w-full bg-gray-700 text-white rounded-xl p-3 text-base"
       >
-        Alle Daten dieses Projekts Herunterladen
+        ⬇️ Alle Daten dieses Projekts Herunterladen
       </button>
     </div>
   </div>
