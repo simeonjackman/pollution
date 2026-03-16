@@ -7,4 +7,9 @@ export default defineConfig({
   plugins: [vue(),
     tailwindcss(),
   ],
+  server: {
+    proxy: {
+      '/api': 'http://localhost:3001',
+    },
+  },
 })
