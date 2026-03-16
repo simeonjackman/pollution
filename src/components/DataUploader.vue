@@ -1,7 +1,9 @@
 <template>
   <div class="min-h-screen bg-gray-100 flex items-center justify-center p-4">
     <div class="w-full max-w-md bg-white rounded-2xl shadow-lg p-5 space-y-4">
-      <h2 class="text-xl font-semibold text-center">BNE Projekt FHNW: Messwerte erfassen</h2>
+      <h2 class="text-xl font-semibold text-center">BNE Projekt FHNW:</h2>
+      <h3 class="text-xl font-semibold text-center">Messwerte erfassen</h3>
+      
 
       <!-- Location -->
       <div>
@@ -27,7 +29,7 @@
 
       <!-- Measurement type -->
       <div v-if="senseBoxId">
-        <label class="block text-sm font-medium mb-1">Messung</label>
+        <label class="block text-lg font-medium mb-2">Was wird gemessen?</label>
         <select v-model="sensorId" class="w-full border rounded-xl p-3 text-base">
           <option disabled value="">Wähle...</option>
           <option value="3466446">Temperatur</option>
