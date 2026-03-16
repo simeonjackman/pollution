@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-screen bg-gray-100 flex items-center justify-center p-4">
+  <div class="min-h-screen bg-gray-100 flex flex-col items-center justify-center p-4">
     <div class="w-full max-w-md bg-white rounded-2xl shadow-lg p-5 space-y-4">
       <h2 class="text-xl font-semibold text-center">BNE Projekt FHNW:</h2>
       <h3 class="text-xl font-semibold text-center">Messwerte erfassen</h3>
@@ -91,6 +91,9 @@
       </button>
 
     </div>
+    <footer class="w-full max-w-md mt-4 text-center text-xs text-gray-400 px-2">
+      Projekt von Iryna Roth, Nina Brunner und Simeon Jackan zum Kurs WBWA110 Bildung für Nachhaltige Entwicklung fördern am Gymnasium
+    </footer>
   </div>
 </template>
 
