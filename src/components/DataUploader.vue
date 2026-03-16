@@ -4,6 +4,22 @@
       <h2 class="text-xl font-semibold text-center">BNE Projekt FHNW:</h2>
       <h3 class="text-xl font-semibold text-center">Messwerte erfassen</h3>
       
+      <!-- Map -->
+      <button
+        @click="showMap = !showMap"
+        class="w-full bg-blue-800 text-white rounded-xl p-3 text-base"
+      >
+        {{ showMap ? '🗺️ Karte ausblenden' : '🗺️ Karte anzeigen' }}
+      </button>
+      <div v-if="showMap" class="rounded-xl overflow-hidden">
+        <iframe
+          src="https://www.google.com/maps/d/embed?mid=1TYjb8TRF-nGwMc1B2ohctL2elBCGF4w&hl=de&ehbc=2E312F"
+          width="100%"
+          height="480"
+          style="border:0"
+          allowfullscreen
+        ></iframe>
+      </div>
 
       <!-- Location -->
       <div>
@@ -73,6 +89,7 @@
       >
         ⬇️ Alle Daten dieses Projekts Herunterladen
       </button>
+
     </div>
   </div>
 </template>
@@ -84,6 +101,8 @@ const senseBoxId = ref('')
 const sensorId = ref('')
 const value = ref(null)
 const status = ref(null)
+
+const showMap = ref(false)
 
 const BOX_IDS = ['10', '25', '92']
 
