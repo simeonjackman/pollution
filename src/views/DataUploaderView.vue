@@ -1,7 +1,6 @@
 <template>
   <div class="space-y-4 text-black">
-    <h2 class="text-xl font-semibold text-center">BNE Projekt FHNW:</h2>
-    <h3 class="text-xl font-semibold text-center">Messwerte erfassen</h3>
+    <h3 class="text-xl font-semibold text-center">Datenerfassung</h3>
 
     <button
       @click="showMap = !showMap"
@@ -93,6 +92,14 @@
         class="w-full border rounded-xl p-3 text-base"
         placeholder="Messwert eingeben"
       />
+    </div>
+
+    <div
+      v-if="senseBoxId && sensorId && value !== null"
+      class="rounded-xl border border-red-300 bg-red-100 px-4 py-3 text-center text-sm font-semibold text-red-800"
+    >
+      <b>Warnung:</b> Bitte keine falschen Daten eingeben. Falsche Messwerte
+      können die Datenanalyse verfälschen.
     </div>
 
     <button

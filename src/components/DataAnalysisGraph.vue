@@ -285,7 +285,7 @@ function shouldShowXAxisLabel(index) {
       </p>
       <button
         type="button"
-        class="mt-2 cursor-pointer text-xs font-medium text-slate-600 underline"
+        class="mt-2 cursor-pointer text-base font-medium text-slate-600 underline"
         @click="clearActivePoint"
       >
         Auswahl entfernen

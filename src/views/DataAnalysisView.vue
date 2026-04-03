@@ -267,18 +267,18 @@ watch(selectedRangeId, () => {
 <template>
   <section class="space-y-4">
     <h1 class="text-xl font-semibold text-center text-slate-900">
-      Data Analysis
+      Datenanalyse
     </h1>
-    <p class="text-sm leading-6 text-slate-700">
-      Dynamische Messwerte aller Boxen und Sensoren im gewaehlten Zeitraum.
+    <p class="text-base leading-7 text-slate-700 text-center">
+      Messwerte aller Sensoren im gewählten Zeitraum.
     </p>
 
     <div class="flex flex-wrap items-end justify-between gap-3">
-      <label class="flex flex-col gap-1 text-sm text-slate-700">
+      <label class="flex flex-col gap-1 text-base text-slate-700">
         Zeitraum
         <select
           v-model="selectedRangeId"
-          class="h-10 min-w-52 cursor-pointer rounded-lg border border-slate-300 bg-white px-3 text-sm font-medium text-slate-700"
+          class="h-10 min-w-52 cursor-pointer rounded-lg border border-slate-300 bg-white px-3 text-base font-medium text-slate-700"
           :disabled="isLoading"
         >
           <option
@@ -293,7 +293,7 @@ watch(selectedRangeId, () => {
 
       <button
         type="button"
-        class="h-10 cursor-pointer rounded-lg border border-slate-300 bg-white px-4 text-sm font-medium text-slate-700"
+        class="h-10 cursor-pointer rounded-lg border border-slate-300 bg-white px-4 text-base font-medium text-slate-700"
         :disabled="isLoading"
         @click="loadChartData"
       >
@@ -303,14 +303,14 @@ watch(selectedRangeId, () => {
 
     <div
       v-if="isLoading"
-      class="rounded-xl bg-slate-50 p-3 text-sm text-slate-700"
+      class="rounded-xl bg-slate-50 p-3 text-base text-slate-700"
     >
       Lade Messwerte...
     </div>
 
     <div
       v-else-if="loadError"
-      class="rounded-xl bg-amber-50 p-3 text-sm text-amber-800"
+      class="rounded-xl bg-amber-50 p-3 text-base text-amber-800"
     >
       {{ loadError }}
     </div>
@@ -322,7 +322,9 @@ watch(selectedRangeId, () => {
       aria-label="Diskussion zur Datenanalyse"
     >
       <h2 class="text-base font-semibold text-slate-900">Diskussionsfragen</h2>
-      <ol class="list-decimal space-y-2 pl-5 text-sm leading-6 text-slate-700">
+      <ol
+        class="list-decimal space-y-2 pl-5 text-base leading-7 text-slate-700"
+      >
         <li>
           Welche Faktoren können dazu führen, dass gemessene Wert fehler
           aufweisen? Welche konkreten Faktoren sind euch beim Messen

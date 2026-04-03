@@ -44,7 +44,7 @@ function closeMenu() {
       <div class="grid grid-cols-1 gap-2">
         <RouterLink
           to="/introduction"
-          class="flex h-12 items-center justify-center rounded-lg bg-slate-700 px-3 text-center text-sm font-semibold !text-white"
+          class="flex h-12 items-center justify-center rounded-lg bg-slate-700 px-3 text-center text-base font-semibold !text-white"
           active-class="!bg-slate-600 !text-white"
           @click="closeMenu"
         >
@@ -52,7 +52,7 @@ function closeMenu() {
         </RouterLink>
         <RouterLink
           to="/data-uploader"
-          class="flex h-12 items-center justify-center rounded-lg bg-slate-700 px-3 text-center text-sm font-semibold !text-white"
+          class="flex h-12 items-center justify-center rounded-lg bg-slate-700 px-3 text-center text-base font-semibold !text-white"
           active-class="!bg-slate-600 !text-white"
           @click="closeMenu"
         >
@@ -60,7 +60,7 @@ function closeMenu() {
         </RouterLink>
         <RouterLink
           to="/data-analysis"
-          class="flex h-12 items-center justify-center rounded-lg bg-slate-700 px-3 text-center text-sm font-semibold !text-white"
+          class="flex h-12 items-center justify-center rounded-lg bg-slate-700 px-3 text-center text-base font-semibold !text-white"
           active-class="!bg-slate-600 !text-white"
           @click="closeMenu"
         >
