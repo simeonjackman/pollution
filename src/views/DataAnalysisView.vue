@@ -1,5 +1,6 @@
 <script setup>
 import DataAnalysisGraph from "../components/DataAnalysisGraph.vue";
+import DataDownloadButton from "../components/DataDownloadButton.vue";
 
 const monthlyData = [
   { label: "Jan", value: 18 },
@@ -36,5 +37,9 @@ const monthlyData = [
         </p>
       </div>
     </div>
+
+    <hr class="border-gray-200" />
+
+    <DataDownloadButton group-tag="FHNW-BNE-Projekt" />
   </section>
 </template>

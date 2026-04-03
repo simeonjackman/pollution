@@ -22,7 +22,7 @@ function closeMenu() {
 
         <button
           type="button"
-          class="absolute right-3 top-1/2 inline-flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-lg border border-blue-900 bg-blue-800 text-white"
+          class="absolute right-3 top-1/2 inline-flex h-12 w-12 -translate-y-1/2 cursor-pointer items-center justify-center rounded-lg border border-blue-900 bg-blue-800 text-white"
           aria-label="Open menu"
           @click="menuOpen = !menuOpen"
         >
@@ -83,7 +83,7 @@ function closeMenu() {
     <button
       v-if="menuOpen"
       type="button"
-      class="fixed inset-0 z-40 cursor-default bg-transparent"
+      class="fixed inset-0 z-40 cursor-pointer bg-transparent"
       aria-label="Close menu"
       @click="closeMenu"
     ></button>

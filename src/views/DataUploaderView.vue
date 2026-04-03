@@ -5,7 +5,7 @@
 
     <button
       @click="showMap = !showMap"
-      class="h-12 w-full rounded-xl bg-blue-800 text-base text-white"
+      class="h-12 w-full cursor-pointer rounded-xl bg-blue-800 text-base text-white"
     >
       {{ showMap ? "🗺️ Karte ausblenden" : "🗺️ Karte anzeigen" }}
     </button>
@@ -29,7 +29,7 @@
             sensorId = '';
           "
           :class="[
-            'h-12 rounded-2xl border-2 px-4 text-base font-semibold',
+            'h-12 cursor-pointer rounded-2xl border-2 px-4 text-base font-semibold',
             senseBoxId === '69cf8fb591c0af00075d3ce8'
               ? 'bg-blue-600 text-white border-blue-600'
               : 'bg-gray-800 text-white border-gray-300',
@@ -44,7 +44,7 @@
             sensorId = '';
           "
           :class="[
-            'h-12 rounded-2xl border-2 px-4 text-base font-semibold',
+            'h-12 cursor-pointer rounded-2xl border-2 px-4 text-base font-semibold',
             senseBoxId === '69cf906291c0af00075e44e3'
               ? 'bg-blue-600 text-white border-blue-600'
               : 'bg-gray-800 text-white border-gray-300',
@@ -59,7 +59,7 @@
             sensorId = '';
           "
           :class="[
-            'h-12 rounded-2xl border-2 px-4 text-base font-semibold',
+            'h-12 cursor-pointer rounded-2xl border-2 px-4 text-base font-semibold',
             senseBoxId === '69cf9aa991c0af00076e356c'
               ? 'bg-blue-600 text-white border-blue-600'
               : 'bg-gray-800 text-white border-gray-300',
@@ -98,7 +98,7 @@
     <button
       v-if="senseBoxId && sensorId && value !== null"
       @click="submit"
-      class="h-12 w-full rounded-xl bg-green-600 text-base text-white"
+      class="h-12 w-full cursor-pointer rounded-xl bg-green-600 text-base text-white"
     >
       Messung einreichen
     </button>
@@ -112,15 +112,6 @@
     >
       {{ status.message }}
     </div>
-
-    <hr class="border-gray-200" />
-
-    <button
-      @click="downloadData"
-      class="h-12 w-full rounded-xl bg-gray-700 text-base text-white"
-    >
-      ⬇️ Alle Daten dieses Projekts Herunterladen
-    </button>
   </div>
 </template>
 
@@ -133,12 +124,6 @@ const value = ref(null);
 const status = ref(null);
 
 const showMap = ref(false);
-
-const BOX_IDS = [
-  "69cf8fb591c0af00075d3ce8",
-  "69cf906291c0af00075e44e3",
-  "69cf9aa991c0af00076e356c",
-];
 
 const SENSOR_MAP = {
   "69cf8fb591c0af00075d3ce8": [
@@ -163,24 +148,6 @@ const SENSOR_MAP = {
     { name: "CO2 (ppm)", id: "69cf9aa991c0af00076e3571" },
   ],
 };
-
-function downloadData() {
-  const now = new Date();
-  const oneMonthAgo = new Date(now);
-  oneMonthAgo.setMonth(oneMonthAgo.getMonth() - 1);
-
-  const toDate = now.toISOString();
-  const fromDate = oneMonthAgo.toISOString();
-
-  const params = new URLSearchParams({
-    boxId: BOX_IDS.join(","),
-    "from-date": fromDate,
-    "to-date": toDate,
-  });
-
-  const url = `https://api.opensensemap.org/boxes/data?${params}`;
-  window.open(url, "_blank");
-}
 
 async function submit() {
   status.value = null;
