@@ -248,7 +248,6 @@ function shouldShowXAxisLabel(index) {
             r="5.5"
             :fill="item.color"
             class="cursor-pointer"
-            @mouseenter="setActivePoint(item.name, idx)"
             @click="setActivePoint(item.name, idx)"
           />
         </g>
