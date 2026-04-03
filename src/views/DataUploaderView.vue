@@ -5,7 +5,7 @@
 
     <button
       @click="showMap = !showMap"
-      class="h-12 w-full cursor-pointer rounded-xl bg-blue-800 text-base text-white"
+      class="h-12 w-full cursor-pointer rounded-xl bg-slate-700 text-base text-white"
     >
       {{ showMap ? "🗺️ Karte ausblenden" : "🗺️ Karte anzeigen" }}
     </button>
@@ -31,8 +31,8 @@
           :class="[
             'h-12 cursor-pointer rounded-2xl border-2 px-4 text-base font-semibold',
             senseBoxId === '69cf8fb591c0af00075d3ce8'
-              ? 'bg-blue-600 text-white border-blue-600'
-              : 'bg-gray-800 text-white border-gray-300',
+              ? 'bg-slate-600 text-white border-slate-600'
+              : 'bg-slate-100 text-slate-800 border-slate-300',
           ]"
         >
           🌲 Wald
@@ -46,8 +46,8 @@
           :class="[
             'h-12 cursor-pointer rounded-2xl border-2 px-4 text-base font-semibold',
             senseBoxId === '69cf906291c0af00075e44e3'
-              ? 'bg-blue-600 text-white border-blue-600'
-              : 'bg-gray-800 text-white border-gray-300',
+              ? 'bg-slate-600 text-white border-slate-600'
+              : 'bg-slate-100 text-slate-800 border-slate-300',
           ]"
         >
           🚗 Strasse
@@ -61,8 +61,8 @@
           :class="[
             'h-12 cursor-pointer rounded-2xl border-2 px-4 text-base font-semibold',
             senseBoxId === '69cf9aa991c0af00076e356c'
-              ? 'bg-blue-600 text-white border-blue-600'
-              : 'bg-gray-800 text-white border-gray-300',
+              ? 'bg-slate-600 text-white border-slate-600'
+              : 'bg-slate-100 text-slate-800 border-slate-300',
           ]"
         >
           🏠 Siedlungsgebiet
@@ -98,7 +98,7 @@
     <button
       v-if="senseBoxId && sensorId && value !== null"
       @click="submit"
-      class="h-12 w-full cursor-pointer rounded-xl bg-green-600 text-base text-white"
+      class="h-12 w-full cursor-pointer rounded-xl bg-emerald-700 text-base text-white"
     >
       Messung einreichen
     </button>

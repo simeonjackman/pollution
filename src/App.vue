@@ -13,16 +13,16 @@ function closeMenu() {
     <header
       class="sticky top-0 z-40 border-b border-gray-200 bg-white/95 backdrop-blur"
     >
-      <div class="relative flex h-14 items-center justify-center px-4">
+      <div class="mx-auto flex h-14 w-full max-w-5xl items-center justify-center px-4 sm:px-6">
         <h1
-          class="text-center text-sm font-semibold text-gray-900 sm:text-base"
+          class="text-center text-sm font-semibold tracking-wide text-slate-800 sm:text-base"
         >
           BNE: Verschmutzung sichtbar machen
         </h1>
 
         <button
           type="button"
-          class="absolute right-3 top-1/2 inline-flex h-12 w-12 -translate-y-1/2 cursor-pointer items-center justify-center rounded-lg border border-blue-900 bg-blue-800 text-white"
+          class="absolute right-4 top-1/2 inline-flex h-12 w-12 -translate-y-1/2 cursor-pointer items-center justify-center rounded-lg border border-slate-500 bg-slate-700 text-white"
           aria-label="Open menu"
           @click="menuOpen = !menuOpen"
         >
@@ -37,29 +37,29 @@ function closeMenu() {
 
     <nav
       v-if="menuOpen"
-      class="fixed right-3 top-16 z-50 w-56 rounded-xl border border-gray-200 bg-white p-2 shadow-lg"
+      class="fixed right-4 top-16 z-50 w-56 rounded-xl border border-gray-200 bg-white p-2 shadow-lg"
     >
       <div class="grid grid-cols-1 gap-2">
         <RouterLink
           to="/introduction"
-          class="flex h-12 items-center justify-center rounded-lg bg-blue-800 px-3 text-center text-sm text-white"
-          active-class="!bg-blue-600"
+          class="flex h-12 items-center justify-center rounded-lg bg-slate-700 px-3 text-center text-sm font-semibold !text-white"
+          active-class="!bg-slate-600 !text-white"
           @click="closeMenu"
         >
           Introduction
         </RouterLink>
         <RouterLink
           to="/data-uploader"
-          class="flex h-12 items-center justify-center rounded-lg bg-blue-800 px-3 text-center text-sm text-white"
-          active-class="!bg-blue-600"
+          class="flex h-12 items-center justify-center rounded-lg bg-slate-700 px-3 text-center text-sm font-semibold !text-white"
+          active-class="!bg-slate-600 !text-white"
           @click="closeMenu"
         >
           Data Uploader
         </RouterLink>
         <RouterLink
           to="/data-analysis"
-          class="flex h-12 items-center justify-center rounded-lg bg-blue-800 px-3 text-center text-sm text-white"
-          active-class="!bg-blue-600"
+          class="flex h-12 items-center justify-center rounded-lg bg-slate-700 px-3 text-center text-sm font-semibold !text-white"
+          active-class="!bg-slate-600 !text-white"
           @click="closeMenu"
         >
           Analysis

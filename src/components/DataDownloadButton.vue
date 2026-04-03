@@ -154,12 +154,12 @@ async function downloadData() {
     <button
       @click="downloadData"
       :disabled="isDownloading"
-      class="h-12 w-full cursor-pointer rounded-xl bg-gray-700 text-base text-white"
+      class="h-12 w-full cursor-pointer rounded-xl bg-slate-700 text-base text-white"
     >
       {{
         isDownloading
           ? "⏳ Daten werden heruntergeladen..."
-          : "⬇️ Alle Daten dieses Projekts Herunterladen"
+          : "⬇️ Alle Daten Herunterladen"
       }}
     </button>
 
