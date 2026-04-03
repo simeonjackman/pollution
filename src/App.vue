@@ -25,7 +25,7 @@ function closeMenu() {
         <button
           type="button"
           class="absolute right-4 top-1/2 inline-flex h-12 w-12 -translate-y-1/2 cursor-pointer items-center justify-center rounded-lg border border-slate-500 bg-slate-700 text-white"
-          aria-label="Open menu"
+          aria-label="Menü öffnen"
           @click="menuOpen = !menuOpen"
         >
           <span class="space-y-1">
@@ -48,7 +48,7 @@ function closeMenu() {
           active-class="!bg-slate-600 !text-white"
           @click="closeMenu"
         >
-          Introduction
+          Einführung
         </RouterLink>
         <RouterLink
           to="/data-uploader"
@@ -56,7 +56,7 @@ function closeMenu() {
           active-class="!bg-slate-600 !text-white"
           @click="closeMenu"
         >
-          Data Uploader
+          Datenerfassung
         </RouterLink>
         <RouterLink
           to="/data-analysis"
@@ -64,7 +64,7 @@ function closeMenu() {
           active-class="!bg-slate-600 !text-white"
           @click="closeMenu"
         >
-          Analysis
+          Datenanalyse
         </RouterLink>
       </div>
     </nav>
@@ -86,7 +86,7 @@ function closeMenu() {
       v-if="menuOpen"
       type="button"
       class="fixed inset-0 z-40 cursor-pointer bg-transparent"
-      aria-label="Close menu"
+      aria-label="Menü schließen"
       @click="closeMenu"
     ></button>
   </div>

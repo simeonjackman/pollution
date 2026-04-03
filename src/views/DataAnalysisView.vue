@@ -317,6 +317,36 @@ watch(selectedRangeId, () => {
 
     <DataAnalysisGraph v-else :labels="chartLabels" :series="chartSeries" />
 
+    <section
+      class="space-y-3 rounded-xl border border-slate-200 bg-slate-50 p-4"
+      aria-label="Diskussion zur Datenanalyse"
+    >
+      <h2 class="text-base font-semibold text-slate-900">Diskussionsfragen</h2>
+      <ol class="list-decimal space-y-2 pl-5 text-sm leading-6 text-slate-700">
+        <li>
+          Welche Faktoren können dazu führen, dass gemessene Wert fehler
+          aufweisen? Welche konkreten Faktoren sind euch beim Messen
+          aufgefallen?
+        </li>
+        <li>
+          Ab wann kann man auf Basis der gemessenen Werte eine verlässliche
+          Aussage treffen? Begründe deine Antwort mit Blick auf Anzahl, Streuung
+          und Zeitraum der Daten.
+        </li>
+        <li>
+          Welche möglichen Verursacher der Verschmutzung lassen sich aus den
+          Messwerten ableiten (z. B. Verkehr, Industrie, Wetter, Tageszeit)?
+          Nenne mindestens zwei und begründe sie mit Daten, falls möglich.
+        </li>
+        <li>
+          Welche Methoden zur zukünftigen Vermeidung von Verschmutzung hältst du
+          für sinnvoll (z. B. Verkehrskonzepte, Filtertechnik,
+          Verhaltensänderungen)? Recherchiere und ordne jede Methode nach
+          erwarteter Wirkung und Umsetzbarkeit.
+        </li>
+      </ol>
+    </section>
+
     <hr class="border-gray-200" />
 
     <DataDownloadButton group-tag="FHNW-BNE-Projekt" />
