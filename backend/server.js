@@ -18,7 +18,7 @@ const SENSEBOX_TOKEN_MAP = {
 /**
  * POST /api/measurement
  * Body: { senseBoxId, sensorId, value }
- * Proxies to: POST https://api.opensensemap.org/boxes/:senseBoxId/data/:sensorId
+ * Proxies to: POST https://api.opensensemap.org/boxes/:senseBoxId/:sensorId
  */
 app.post('/api/measurement', async (req, res) => {
   const { senseBoxId, sensorId, value } = req.body;
@@ -27,7 +27,7 @@ app.post('/api/measurement', async (req, res) => {
     return res.status(400).json({ error: 'senseBoxId, sensorId, and value are required' });
   }
 
-  const url = `https://api.opensensemap.org/boxes/${senseBoxId}/data/${sensorId}`;
+  const url = `https://api.opensensemap.org/boxes/${senseBoxId}/${sensorId}`;
 
   const headers = { 'Content-Type': 'application/json' };
 
@@ -39,10 +39,13 @@ app.post('/api/measurement', async (req, res) => {
     });
   }
 
-  const token = tokenEnvName ? process.env[tokenEnvName] : null;
-  if (token) {
-    headers['Authorization'] = token;
+  const token = process.env[tokenEnvName];
+  if (!token) {
+    return res.status(500).json({
+      error: `Missing environment variable for token: ${tokenEnvName}`,
+    });
   }
+  headers['Authorization'] = token;
 
   try {
     const response = await fetch(url, {
