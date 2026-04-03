@@ -192,7 +192,10 @@ async function submit() {
       value.value = null;
     } else {
       const text = await res.text();
-      status.value = { ok: false, message: `Fehler ${res.status}: ${text}` };
+      status.value = {
+        ok: false,
+        message: `Fehler ${res.status}: ${text}; tried to Post (SenseBox ${senseBoxId.value}, Sensor ${sensorId.value}): ${value.value}`,
+      };
     }
   } catch (err) {
     status.value = { ok: false, message: `Netzwerkfehler: ${err.message}` };
