@@ -24,7 +24,10 @@
       <div class="grid grid-cols-1 gap-4">
         <button
           type="button"
-          @click="senseBoxId = '69cf8fb591c0af00075d3ce8'"
+          @click="
+            senseBoxId = '69cf8fb591c0af00075d3ce8';
+            sensorId = '';
+          "
           :class="[
             'h-12 rounded-2xl border-2 px-4 text-base font-semibold',
             senseBoxId === '69cf8fb591c0af00075d3ce8'
@@ -36,7 +39,10 @@
         </button>
         <button
           type="button"
-          @click="senseBoxId = '69cf906291c0af00075e44e3'"
+          @click="
+            senseBoxId = '69cf906291c0af00075e44e3';
+            sensorId = '';
+          "
           :class="[
             'h-12 rounded-2xl border-2 px-4 text-base font-semibold',
             senseBoxId === '69cf906291c0af00075e44e3'
@@ -48,7 +54,10 @@
         </button>
         <button
           type="button"
-          @click="senseBoxId = '69cf9aa991c0af00076e356c'"
+          @click="
+            senseBoxId = '69cf9aa991c0af00076e356c';
+            sensorId = '';
+          "
           :class="[
             'h-12 rounded-2xl border-2 px-4 text-base font-semibold',
             senseBoxId === '69cf9aa991c0af00076e356c'
@@ -125,15 +134,19 @@ const status = ref(null);
 
 const showMap = ref(false);
 
-const BOX_IDS = ["10", "25", "92"];
+const BOX_IDS = [
+  "69cf8fb591c0af00075d3ce8",
+  "69cf906291c0af00075e44e3",
+  "69cf9aa991c0af00076e356c",
+];
 
 const SENSOR_MAP = {
   "69cf8fb591c0af00075d3ce8": [
-    { name: "Luftverschmutzung (AQI)", id: "aqi_10" },
-    { name: "Lärmverschmutzung (db)", id: "noise_10" },
-    { name: "Elektrisches Feld (nT)", id: "efield_10" },
-    { name: "Magnetisches Feld (nT)", id: "bfield_10" },
-    { name: "CO2 (ppm)", id: "co2_10" },
+    { name: "Luftverschmutzung (AQI)", id: "69cf8fb591c0af00075d3ce9" },
+    { name: "Lärmverschmutzung (db)", id: "69cf8fb591c0af00075d3cea" },
+    { name: "Elektrisches Feld (nT)", id: "69cf8fb591c0af00075d3ceb" },
+    { name: "Magnetisches Feld (nT)", id: "69cf8fb591c0af00075d3cec" },
+    { name: "CO2 (ppm)", id: "69cf8fb591c0af00075d3ced" },
   ],
   "69cf906291c0af00075e44e3": [
     { name: "Luftverschmutzung (AQI)", id: "69cf906291c0af00075e44e4" },
@@ -143,11 +156,11 @@ const SENSOR_MAP = {
     { name: "CO2 (ppm)", id: "69cf906291c0af00075e44e8" },
   ],
   "69cf9aa991c0af00076e356c": [
-    { name: "Luftverschmutzung (AQI)", id: "aqi_92" },
-    { name: "Lärmverschmutzung (db)", id: "noise_92" },
-    { name: "Elektrisches Feld (nT)", id: "efield_92" },
-    { name: "Magnetisches Feld (nT)", id: "bfield_92" },
-    { name: "CO2 (ppm)", id: "co2_92" },
+    { name: "Luftverschmutzung (AQI)", id: "69cf9aa991c0af00076e356d" },
+    { name: "Lärmverschmutzung (db)", id: "69cf9aa991c0af00076e356e" },
+    { name: "Elektrisches Feld (nT)", id: "69cf9aa991c0af00076e356f" },
+    { name: "Magnetisches Feld (nT)", id: "69cf9aa991c0af00076e3570" },
+    { name: "CO2 (ppm)", id: "69cf9aa991c0af00076e3571" },
   ],
 };
 
