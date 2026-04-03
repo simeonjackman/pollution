@@ -36,10 +36,10 @@
         </button>
         <button
           type="button"
-          @click="senseBoxId = '25'"
+          @click="senseBoxId = '69cf906291c0af00075e44e3'"
           :class="[
             'h-12 rounded-2xl border-2 px-4 text-base font-semibold',
-            senseBoxId === '25'
+            senseBoxId === '69cf906291c0af00075e44e3'
               ? 'bg-blue-600 text-white border-blue-600'
               : 'bg-gray-800 text-white border-gray-300',
           ]"
@@ -65,9 +65,13 @@
       <label class="block text-lg font-medium mb-2">Was wird gemessen?</label>
       <select v-model="sensorId" class="w-full border rounded-xl p-3 text-base">
         <option disabled value="">Wähle...</option>
-        <option value="3466446">Temperatur</option>
-        <option value="2356444">CO2</option>
-        <option value="4234433">Feuchtigkeit</option>
+        <option
+          v-for="sensor in SENSOR_MAP[senseBoxId]"
+          :key="sensor.id"
+          :value="sensor.id"
+        >
+          {{ sensor.name }}
+        </option>
       </select>
     </div>
 
@@ -122,6 +126,30 @@ const status = ref(null);
 const showMap = ref(false);
 
 const BOX_IDS = ["10", "25", "92"];
+
+const SENSOR_MAP = {
+  10: [
+    { name: "Luftverschmutzung (AQI)", id: "aqi_10" },
+    { name: "Lärmverschmutzung (db)", id: "noise_10" },
+    { name: "Elektrisches Feld (nT)", id: "efield_10" },
+    { name: "Magnetisches Feld (nT)", id: "bfield_10" },
+    { name: "CO2 (ppm)", id: "co2_10" },
+  ],
+  "69cf906291c0af00075e44e3": [
+    { name: "Luftverschmutzung (AQI)", id: "69cf906291c0af00075e44e4" },
+    { name: "Lärmverschmutzung (db)", id: "69cf906291c0af00075e44e5" },
+    { name: "Elektrisches Feld (nT)", id: "69cf906291c0af00075e44e6" },
+    { name: "Magnetisches Feld (nT)", id: "69cf906291c0af00075e44e7" },
+    { name: "CO2 (ppm)", id: "69cf906291c0af00075e44e8" },
+  ],
+  92: [
+    { name: "Luftverschmutzung (AQI)", id: "aqi_92" },
+    { name: "Lärmverschmutzung (db)", id: "noise_92" },
+    { name: "Elektrisches Feld (nT)", id: "efield_92" },
+    { name: "Magnetisches Feld (nT)", id: "bfield_92" },
+    { name: "CO2 (ppm)", id: "co2_92" },
+  ],
+};
 
 function downloadData() {
   const now = new Date();
