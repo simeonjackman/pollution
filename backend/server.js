@@ -8,6 +8,13 @@ app.use(express.json());
 
 app.get('/', (req, res) => res.send('api online'));
 
+// Map senseBoxId to environment variable names for tokens
+const SENSEBOX_TOKEN_MAP = {
+  '10': 'WALDTOKEN',
+  '69cf906291c0af00075e44e3': 'STRASSETOKEN',
+  '92': 'SIEDLUNGTOKEN',
+};
+
 /**
  * POST /api/measurement
  * Body: { senseBoxId, sensorId, value }
@@ -23,8 +30,18 @@ app.post('/api/measurement', async (req, res) => {
   const url = `https://api.opensensemap.org/boxes/${senseBoxId}/data/${sensorId}`;
 
   const headers = { 'Content-Type': 'application/json' };
-  if (process.env.SENSEBOX_TOKEN) {
-    headers['Authorization'] = process.env.SENSEBOX_TOKEN;
+  
+  // Get the token for this specific senseBoxId
+  const tokenEnvName = SENSEBOX_TOKEN_MAP[senseBoxId];
+  if (!tokenEnvName) {
+    return res.status(400).json({
+      error: `No token mapping configured for senseBoxId: ${senseBoxId}`,
+    });
+  }
+
+  const token = tokenEnvName ? process.env[tokenEnvName] : null;
+  if (token) {
+    headers['Authorization'] = token;
   }
 
   try {
