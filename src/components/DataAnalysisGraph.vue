@@ -1,80 +1,309 @@
 <script setup>
+import { computed, ref } from "vue";
+
 const props = defineProps({
-  data: {
+  labels: {
     type: Array,
-    required: true,
+    default: () => [],
+  },
+  series: {
+    type: Array,
+    default: () => [],
   },
 });
 
-const chartHeight = 220;
-const chartWidth = 320;
-const padding = 24;
-const maxValue = Math.max(...props.data.map((entry) => entry.value));
-const innerWidth = chartWidth - padding * 2;
-const innerHeight = chartHeight - padding * 2;
-const step = innerWidth / (props.data.length - 1);
+const activePoint = ref(null);
 
-const points = props.data
-  .map((entry, index) => {
-    const x = padding + index * step;
-    const y = padding + innerHeight - (entry.value / maxValue) * innerHeight;
-    return `${x},${y}`;
-  })
-  .join(" ");
+const chartWidth = 720;
+const chartHeight = 300;
+const padding = { top: 20, right: 18, bottom: 48, left: 44 };
+const innerWidth = chartWidth - padding.left - padding.right;
+const innerHeight = chartHeight - padding.top - padding.bottom;
 
-const areaPoints = `24,196 ${points} 296,196`;
+const palette = [
+  "#2563eb",
+  "#0f766e",
+  "#9333ea",
+  "#be123c",
+  "#c2410c",
+  "#475569",
+  "#0891b2",
+  "#4d7c0f",
+  "#7c2d12",
+  "#1d4ed8",
+  "#b45309",
+  "#7e22ce",
+];
+
+const cleanedSeries = computed(() =>
+  (props.series || []).map((entry, index) => ({
+    name: entry.name,
+    boxId: entry.boxId || "",
+    boxName: entry.boxName || "",
+    sensorId: entry.sensorId || "",
+    sensorTitle: entry.sensorTitle || "",
+    sensorUnit: entry.sensorUnit || "",
+    counts: Array.isArray(entry.counts) ? entry.counts : [],
+    values: Array.isArray(entry.values) ? entry.values : [],
+    color: entry.color || palette[index % palette.length],
+  })),
+);
+
+const numericValues = computed(() => {
+  const values = [];
+  for (const item of cleanedSeries.value) {
+    for (const value of item.values) {
+      if (typeof value === "number" && Number.isFinite(value)) {
+        values.push(value);
+      }
+    }
+  }
+  return values;
+});
+
+const yMin = computed(() => {
+  if (!numericValues.value.length) {
+    return 0;
+  }
+  const minValue = Math.min(...numericValues.value);
+  return minValue > 0 ? 0 : minValue * 0.9;
+});
+
+const yMax = computed(() => {
+  if (!numericValues.value.length) {
+    return 1;
+  }
+  const maxValue = Math.max(...numericValues.value);
+  return maxValue <= 0 ? 1 : maxValue * 1.1;
+});
+
+const yRange = computed(() => {
+  const range = yMax.value - yMin.value;
+  return range <= 0 ? 1 : range;
+});
+
+const xStep = computed(() => {
+  const count = props.labels.length;
+  if (count <= 1) {
+    return innerWidth;
+  }
+  return innerWidth / (count - 1);
+});
+
+function xAt(index) {
+  return padding.left + index * xStep.value;
+}
+
+function yAt(value) {
+  return (
+    padding.top +
+    innerHeight -
+    ((value - yMin.value) / yRange.value) * innerHeight
+  );
+}
+
+function toPath(values) {
+  let path = "";
+  let started = false;
+
+  for (let i = 0; i < values.length; i += 1) {
+    const value = values[i];
+    if (typeof value !== "number" || !Number.isFinite(value)) {
+      started = false;
+      continue;
+    }
+
+    const command = started ? "L" : "M";
+    path += `${command}${xAt(i)},${yAt(value)} `;
+    started = true;
+  }
+
+  return path.trim();
+}
+
+const yTicks = computed(() => {
+  const tickCount = 5;
+  return Array.from({ length: tickCount }, (_, idx) => {
+    const ratio = idx / (tickCount - 1);
+    const value = yMax.value - ratio * yRange.value;
+    return {
+      value,
+      y: yAt(value),
+    };
+  });
+});
+
+const activePointDetails = computed(() => {
+  if (!activePoint.value) {
+    return null;
+  }
+
+  const { seriesName, index } = activePoint.value;
+  const series = cleanedSeries.value.find((item) => item.name === seriesName);
+  if (!series) {
+    return null;
+  }
+
+  const value = series.values[index];
+  if (typeof value !== "number" || !Number.isFinite(value)) {
+    return null;
+  }
+
+  return {
+    boxName: series.boxName || "Unbekannte Box",
+    sensorTitle: series.sensorTitle || series.name,
+    sensorUnit: series.sensorUnit || "",
+    sensorId: series.sensorId || "-",
+    dateLabel: props.labels[index] || "-",
+    value,
+    count: series.counts[index] || 0,
+    color: series.color,
+  };
+});
+
+function setActivePoint(seriesName, index) {
+  activePoint.value = { seriesName, index };
+}
+
+function clearActivePoint() {
+  activePoint.value = null;
+}
+
+function shouldShowXAxisLabel(index) {
+  const total = props.labels.length;
+  if (total <= 2) {
+    return true;
+  }
+
+  return index % 2 === 0 || index === total - 1;
+}
 </script>
 
 <template>
-  <div
-    class="mt-5 overflow-hidden rounded-[1.5rem] border border-white/10 bg-slate-950/50 p-3"
-  >
+  <div class="space-y-4 rounded-2xl border border-slate-200 bg-white p-4">
     <svg
-      viewBox="0 0 320 220"
+      viewBox="0 0 720 300"
       class="h-auto w-full"
       role="img"
-      aria-label="Line graph with dummy pollution data"
+      aria-label="Dynamische Messwerte im gewaehlten Zeitraum"
     >
-      <defs>
-        <linearGradient id="areaGradient" x1="0" x2="0" y1="0" y2="1">
-          <stop offset="0%" stop-color="#22d3ee" stop-opacity="0.45" />
-          <stop offset="100%" stop-color="#22d3ee" stop-opacity="0.02" />
-        </linearGradient>
-      </defs>
-      <g stroke="rgba(148,163,184,0.18)" stroke-width="1">
-        <line x1="24" y1="24" x2="296" y2="24" />
-        <line x1="24" y1="78" x2="296" y2="78" />
-        <line x1="24" y1="132" x2="296" y2="132" />
-        <line x1="24" y1="186" x2="296" y2="186" />
-      </g>
-      <polyline fill="url(#areaGradient)" stroke="none" :points="areaPoints" />
-      <polyline
-        fill="none"
-        stroke="#22d3ee"
-        stroke-width="4"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        :points="points"
-      />
-      <g v-for="(entry, index) in data" :key="entry.label">
-        <circle
-          :cx="24 + index * (272 / (data.length - 1))"
-          :cy="24 + (196 - (entry.value / maxValue) * 172)"
-          r="5"
-          fill="#e0f2fe"
-          stroke="#22d3ee"
-          stroke-width="2"
+      <g stroke="#e2e8f0" stroke-width="1">
+        <line
+          v-for="tick in yTicks"
+          :key="`grid-${tick.y}`"
+          :x1="padding.left"
+          :y1="tick.y"
+          :x2="chartWidth - padding.right"
+          :y2="tick.y"
         />
+      </g>
+
+      <g fill="#64748b" font-size="11">
         <text
-          :x="24 + index * (272 / (data.length - 1))"
-          y="212"
-          fill="#cbd5e1"
-          font-size="12"
-          text-anchor="middle"
+          v-for="tick in yTicks"
+          :key="`label-${tick.y}`"
+          x="8"
+          :y="tick.y + 4"
         >
-          {{ entry.label }}
+          {{ tick.value.toFixed(1) }}
         </text>
       </g>
+
+      <line
+        :x1="padding.left"
+        :y1="chartHeight - padding.bottom"
+        :x2="chartWidth - padding.right"
+        :y2="chartHeight - padding.bottom"
+        stroke="#94a3b8"
+        stroke-width="1"
+      />
+
+      <g v-for="(label, index) in labels" :key="`x-${label}-${index}`">
+        <text
+          v-if="shouldShowXAxisLabel(index)"
+          :x="xAt(index)"
+          :y="chartHeight - 14"
+          fill="#64748b"
+          font-size="14"
+          text-anchor="middle"
+        >
+          {{ label }}
+        </text>
+      </g>
+
+      <g v-for="item in cleanedSeries" :key="item.name">
+        <path
+          :d="toPath(item.values)"
+          fill="none"
+          :stroke="item.color"
+          stroke-width="2.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+        <g v-for="(value, idx) in item.values" :key="`${item.name}-${idx}`">
+          <circle
+            v-if="typeof value === 'number' && Number.isFinite(value)"
+            :cx="xAt(idx)"
+            :cy="yAt(value)"
+            r="5.5"
+            :fill="item.color"
+            class="cursor-pointer"
+            @mouseenter="setActivePoint(item.name, idx)"
+            @click="setActivePoint(item.name, idx)"
+          />
+        </g>
+      </g>
     </svg>
+
+    <div
+      v-if="activePointDetails"
+      class="rounded-lg border border-slate-200 bg-slate-50 p-3 text-sm text-slate-800"
+    >
+      <div class="mb-2 flex items-center gap-2">
+        <span
+          class="inline-block h-3 w-3 rounded-full"
+          :style="{ backgroundColor: activePointDetails.color }"
+        ></span>
+        <strong>{{ activePointDetails.boxName }}</strong>
+      </div>
+      <p>
+        Sensor: {{ activePointDetails.sensorTitle }}
+        <span v-if="activePointDetails.sensorUnit">
+          ({{ activePointDetails.sensorUnit }})
+        </span>
+      </p>
+      <p>Datum: {{ activePointDetails.dateLabel }}</p>
+      <p>
+        Wert: {{ activePointDetails.value.toFixed(2) }}
+        <span v-if="activePointDetails.sensorUnit">
+          {{ activePointDetails.sensorUnit }}
+        </span>
+      </p>
+      <p>Messungen in diesem Zeitabschnitt: {{ activePointDetails.count }}</p>
+      <p class="text-xs text-slate-500">
+        Sensor ID: {{ activePointDetails.sensorId }}
+      </p>
+      <button
+        type="button"
+        class="mt-2 cursor-pointer text-xs font-medium text-slate-600 underline"
+        @click="clearActivePoint"
+      >
+        Auswahl entfernen
+      </button>
+    </div>
+
+    <div class="grid grid-cols-1 gap-2 sm:grid-cols-2">
+      <div
+        v-for="item in cleanedSeries"
+        :key="`legend-${item.name}`"
+        class="flex items-start gap-2 rounded-lg border border-slate-200 bg-slate-50 px-3 py-2"
+      >
+        <span
+          class="mt-1 inline-block h-3 w-3 rounded-full"
+          :style="{ backgroundColor: item.color }"
+        ></span>
+        <span class="text-sm text-slate-700">{{ item.name }}</span>
+      </div>
+    </div>
   </div>
 </template>

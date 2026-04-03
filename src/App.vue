@@ -13,7 +13,9 @@ function closeMenu() {
     <header
       class="sticky top-0 z-40 border-b border-gray-200 bg-white/95 backdrop-blur"
     >
-      <div class="mx-auto flex h-14 w-full max-w-5xl items-center justify-center px-4 sm:px-6">
+      <div
+        class="mx-auto flex h-14 w-full max-w-5xl items-center justify-center px-4 sm:px-6"
+      >
         <h1
           class="text-center text-sm font-semibold tracking-wide text-slate-800 sm:text-base"
         >
