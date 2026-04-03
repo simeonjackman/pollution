@@ -128,7 +128,7 @@ const showMap = ref(false);
 const BOX_IDS = ["10", "25", "92"];
 
 const SENSOR_MAP = {
-  10: [
+  "69cf8fb591c0af00075d3ce8": [
     { name: "Luftverschmutzung (AQI)", id: "aqi_10" },
     { name: "Lärmverschmutzung (db)", id: "noise_10" },
     { name: "Elektrisches Feld (nT)", id: "efield_10" },
@@ -142,7 +142,7 @@ const SENSOR_MAP = {
     { name: "Magnetisches Feld (nT)", id: "69cf906291c0af00075e44e7" },
     { name: "CO2 (ppm)", id: "69cf906291c0af00075e44e8" },
   ],
-  92: [
+  "69cf9aa991c0af00076e356c": [
     { name: "Luftverschmutzung (AQI)", id: "aqi_92" },
     { name: "Lärmverschmutzung (db)", id: "noise_92" },
     { name: "Elektrisches Feld (nT)", id: "efield_92" },
