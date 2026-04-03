@@ -24,10 +24,10 @@
       <div class="grid grid-cols-1 gap-4">
         <button
           type="button"
-          @click="senseBoxId = '10'"
+          @click="senseBoxId = '69cf8fb591c0af00075d3ce8'"
           :class="[
             'h-12 rounded-2xl border-2 px-4 text-base font-semibold',
-            senseBoxId === '10'
+            senseBoxId === '69cf8fb591c0af00075d3ce8'
               ? 'bg-blue-600 text-white border-blue-600'
               : 'bg-gray-800 text-white border-gray-300',
           ]"
@@ -48,10 +48,10 @@
         </button>
         <button
           type="button"
-          @click="senseBoxId = '92'"
+          @click="senseBoxId = '69cf9aa991c0af00076e356c'"
           :class="[
             'h-12 rounded-2xl border-2 px-4 text-base font-semibold',
-            senseBoxId === '92'
+            senseBoxId === '69cf9aa991c0af00076e356c'
               ? 'bg-blue-600 text-white border-blue-600'
               : 'bg-gray-800 text-white border-gray-300',
           ]"
