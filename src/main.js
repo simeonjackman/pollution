@@ -3,6 +3,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import './style.css'
 import App from './App.vue'
 import IntroductionView from './views/IntroductionView.vue'
+import MeasurementView from './views/MeasurementView.vue'
 import DataUploaderView from './views/DataUploaderView.vue'
 import DataAnalysisView from './views/DataAnalysisView.vue'
 
@@ -15,6 +16,7 @@ if (redirectedPath) {
 const routes = [
     { path: '/', redirect: '/introduction' },
     { path: '/introduction', name: 'introduction', component: IntroductionView },
+    { path: '/measurement', name: 'measurement', component: MeasurementView },
     { path: '/data-uploader', name: 'data-uploader', component: DataUploaderView },
     { path: '/data-analysis', name: 'data-analysis', component: DataAnalysisView },
     { path: '/:pathMatch(.*)*', redirect: '/introduction' },

@@ -51,6 +51,14 @@ function closeMenu() {
           Einführung
         </RouterLink>
         <RouterLink
+          to="/measurement"
+          class="flex h-12 items-center justify-center rounded-lg bg-slate-700 px-3 text-center text-base font-semibold !text-white"
+          active-class="!bg-slate-600 !text-white"
+          @click="closeMenu"
+        >
+          Messung
+        </RouterLink>
+        <RouterLink
           to="/data-uploader"
           class="flex h-12 items-center justify-center rounded-lg bg-slate-700 px-3 text-center text-base font-semibold !text-white"
           active-class="!bg-slate-600 !text-white"
