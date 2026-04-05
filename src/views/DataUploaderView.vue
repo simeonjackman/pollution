@@ -98,8 +98,8 @@
       v-if="senseBoxId && sensorId && value !== null"
       class="rounded-xl border border-red-300 bg-red-100 px-4 py-3 text-center text-sm font-semibold text-red-800"
     >
-      <b>Warnung:</b> Bitte keine falschen Daten eingeben. Falsche Messwerte
-      können die Datenanalyse verfälschen.
+      <b>Warnung:</b> Es kann bis zu 10 Sekunden dauern, bis ein Messwert
+      erfasst wird!
     </div>
 
     <button
@@ -134,23 +134,41 @@ const showMap = ref(false);
 
 const SENSOR_MAP = {
   "69cf8fb591c0af00075d3ce8": [
-    { name: "Luftverschmutzung (AQI)", id: "69cf8fb591c0af00075d3ce9" },
+    {
+      name: "Luftverschmutzung (Mikrogramm pro Kubikmeter)",
+      id: "69cf8fb591c0af00075d3ce9",
+    },
     { name: "Lärmverschmutzung (db)", id: "69cf8fb591c0af00075d3cea" },
-    { name: "Elektrisches Feld (nT)", id: "69cf8fb591c0af00075d3ceb" },
+    {
+      name: "Elektrisches Feld (Volt pro Meter)",
+      id: "69cf8fb591c0af00075d3ceb",
+    },
     { name: "Magnetisches Feld (nT)", id: "69cf8fb591c0af00075d3cec" },
     { name: "CO2 (ppm)", id: "69cf8fb591c0af00075d3ced" },
   ],
   "69cf906291c0af00075e44e3": [
-    { name: "Luftverschmutzung (AQI)", id: "69cf906291c0af00075e44e4" },
+    {
+      name: "Luftverschmutzung (Mikrogramm pro Kubikmeter)",
+      id: "69cf906291c0af00075e44e4",
+    },
     { name: "Lärmverschmutzung (db)", id: "69cf906291c0af00075e44e5" },
-    { name: "Elektrisches Feld (nT)", id: "69cf906291c0af00075e44e6" },
+    {
+      name: "Elektrisches Feld (Volt pro Meter)",
+      id: "69cf906291c0af00075e44e6",
+    },
     { name: "Magnetisches Feld (nT)", id: "69cf906291c0af00075e44e7" },
     { name: "CO2 (ppm)", id: "69cf906291c0af00075e44e8" },
   ],
   "69cf9aa991c0af00076e356c": [
-    { name: "Luftverschmutzung (AQI)", id: "69cf9aa991c0af00076e356d" },
+    {
+      name: "Luftverschmutzung (Mikrogramm pro Kubikmeter)",
+      id: "69cf9aa991c0af00076e356d",
+    },
     { name: "Lärmverschmutzung (db)", id: "69cf9aa991c0af00076e356e" },
-    { name: "Elektrisches Feld (nT)", id: "69cf9aa991c0af00076e356f" },
+    {
+      name: "Elektrisches Feld (Volt pro Meter)",
+      id: "69cf9aa991c0af00076e356f",
+    },
     { name: "Magnetisches Feld (nT)", id: "69cf9aa991c0af00076e3570" },
     { name: "CO2 (ppm)", id: "69cf9aa991c0af00076e3571" },
   ],
