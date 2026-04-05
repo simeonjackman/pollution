@@ -216,7 +216,7 @@ async function loadChartData() {
     const boxes = await boxResponse.json();
 
     if (!Array.isArray(boxes) || !boxes.length) {
-      throw new Error(`Keine Boxen fuer Grouptag ${GROUP_TAG} gefunden.`);
+      throw new Error(`Keine Boxen für Grouptag ${GROUP_TAG} gefunden.`);
     }
 
     const boxColorMap = new Map(
@@ -244,7 +244,7 @@ async function loadChartData() {
     chartSeries.value = loadedSeries;
 
     if (!loadedSeries.length) {
-      loadError.value = `Es wurden keine Messwerte im Zeitraum ${selectedRange.value.label.toLowerCase()} gefunden.`;
+      loadError.value = `Es wurden keine Messwerte im Zeitraum ${selectedRange.value.label} gefunden.`;
     }
   } catch (err) {
     console.error(`Error loading chart data:`, err);
