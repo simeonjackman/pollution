@@ -133,7 +133,7 @@ function selectChapter(chapterId) {
               <p class="mt-1">
                 MOX-Sensoren messen kein reines CO₂, sondern ein Gemisch
                 verschiedener Gase. Der angezeigte Wert ist daher eine
-                Schätzgroesse und beeinflusst die Validity unserer Messung.
+                Schätzgrösse und beeinflusst die Validity unserer Messung.
               </p>
             </div>
 
