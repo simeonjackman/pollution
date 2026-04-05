@@ -145,7 +145,7 @@ function selectChapter(chapterId) {
                 <li>Infrarotstrahlung wird durch eine Luftprobe geleitet.</li>
                 <li>
                   CO₂ absorbiert IR-Licht bei einer charakteristischen
-                  Wellenlänge (~4,26 um).
+                  Wellenlänge (~4,26 µm).
                 </li>
                 <li>
                   Je mehr CO₂ vorhanden ist, desto weniger Licht kommt am
