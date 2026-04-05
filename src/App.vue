@@ -14,7 +14,7 @@ function closeMenu() {
       class="sticky top-0 z-40 border-b border-gray-200 bg-white/95 backdrop-blur"
     >
       <div
-        class="mx-auto flex h-14 w-full max-w-5xl items-center justify-center px-4 sm:px-6"
+        class="relative mx-auto flex h-14 w-full max-w-lg items-center justify-center px-4 sm:px-6 lg:max-w-3xl"
       >
         <h1
           class="text-center text-sm font-semibold tracking-wide text-slate-800 sm:text-base"
@@ -37,45 +37,51 @@ function closeMenu() {
       </div>
     </header>
 
-    <nav
+    <div
       v-if="menuOpen"
-      class="fixed right-4 top-16 z-50 w-56 rounded-xl border border-gray-200 bg-white p-2 shadow-lg"
+      class="fixed inset-x-0 top-16 z-50 px-2 sm:px-3 pointer-events-none"
     >
-      <div class="grid grid-cols-1 gap-2">
-        <RouterLink
-          to="/introduction"
-          class="flex h-12 items-center justify-center rounded-lg bg-slate-700 px-3 text-center text-base font-semibold !text-white"
-          active-class="!bg-slate-600 !text-white"
-          @click="closeMenu"
+      <div class="mx-auto w-full max-w-lg lg:max-w-3xl">
+        <nav
+          class="ml-auto w-56 rounded-xl border border-gray-200 bg-white p-2 shadow-lg pointer-events-auto"
         >
-          Einführung
-        </RouterLink>
-        <RouterLink
-          to="/measurement"
-          class="flex h-12 items-center justify-center rounded-lg bg-slate-700 px-3 text-center text-base font-semibold !text-white"
-          active-class="!bg-slate-600 !text-white"
-          @click="closeMenu"
-        >
-          Messung
-        </RouterLink>
-        <RouterLink
-          to="/data-uploader"
-          class="flex h-12 items-center justify-center rounded-lg bg-slate-700 px-3 text-center text-base font-semibold !text-white"
-          active-class="!bg-slate-600 !text-white"
-          @click="closeMenu"
-        >
-          Datenerfassung
-        </RouterLink>
-        <RouterLink
-          to="/data-analysis"
-          class="flex h-12 items-center justify-center rounded-lg bg-slate-700 px-3 text-center text-base font-semibold !text-white"
-          active-class="!bg-slate-600 !text-white"
-          @click="closeMenu"
-        >
-          Datenanalyse
-        </RouterLink>
+          <div class="grid grid-cols-1 gap-2">
+            <RouterLink
+              to="/introduction"
+              class="flex h-12 items-center justify-center rounded-lg bg-slate-700 px-3 text-center text-base font-semibold !text-white"
+              active-class="!bg-slate-600 !text-white"
+              @click="closeMenu"
+            >
+              Einführung
+            </RouterLink>
+            <RouterLink
+              to="/measurement"
+              class="flex h-12 items-center justify-center rounded-lg bg-slate-700 px-3 text-center text-base font-semibold !text-white"
+              active-class="!bg-slate-600 !text-white"
+              @click="closeMenu"
+            >
+              Messung
+            </RouterLink>
+            <RouterLink
+              to="/data-uploader"
+              class="flex h-12 items-center justify-center rounded-lg bg-slate-700 px-3 text-center text-base font-semibold !text-white"
+              active-class="!bg-slate-600 !text-white"
+              @click="closeMenu"
+            >
+              Datenerfassung
+            </RouterLink>
+            <RouterLink
+              to="/data-analysis"
+              class="flex h-12 items-center justify-center rounded-lg bg-slate-700 px-3 text-center text-base font-semibold !text-white"
+              active-class="!bg-slate-600 !text-white"
+              @click="closeMenu"
+            >
+              Datenanalyse
+            </RouterLink>
+          </div>
+        </nav>
       </div>
-    </nav>
+    </div>
 
     <main class="px-2 pb-4 pt-4 sm:px-3">
       <div
