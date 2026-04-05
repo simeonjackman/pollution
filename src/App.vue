@@ -79,7 +79,7 @@ function closeMenu() {
 
     <main class="px-2 pb-4 pt-4 sm:px-3">
       <div
-        class="mx-auto w-full max-w-lg rounded-2xl bg-white p-5 text-black shadow-lg"
+        class="mx-auto w-full max-w-lg rounded-2xl bg-white p-5 text-black shadow-lg lg:max-w-3xl"
       >
         <RouterView />
       </div>
