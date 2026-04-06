@@ -336,9 +336,9 @@ watch(selectedRangeId, () => {
           und Zeitraum der Daten.
         </li>
         <li>
-          Welche möglichen Verursacher der Verschmutzung lassen sich aus den
-          Messwerten ableiten (z. B. Verkehr, Industrie, Wetter, Tageszeit)?
-          Nenne mindestens zwei und begründe sie mit Daten, falls möglich.
+          Welche möglichen Verursacher und Einflussfaktoren der Verschmutzung
+          lassen sich aus den Messwerten ableiten (z. B. Industrie)? Nenne
+          mindestens zwei und begründe sie mit Daten, falls möglich.
         </li>
         <li>
           Welche Methoden zur zukünftigen Vermeidung von Verschmutzung hältst du
