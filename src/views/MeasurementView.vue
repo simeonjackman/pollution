@@ -123,18 +123,12 @@ function selectChapter(chapterId) {
                   Der gemessene Widerstand wird in eine Gaskonzentration
                   umgerechnet.
                 </li>
+                <li>
+                  MOX-Sensoren messen kein reines CO₂, sondern ein Gemisch
+                  verschiedener Gase. Der angezeigte Wert ist daher eine
+                  Schätzgrösse.
+                </li>
               </ul>
-            </div>
-
-            <div class="py-3 text-slate-700">
-              <p class="font-semibold text-slate-900">
-                Wichtiger Hinweis zur Gültigkeit
-              </p>
-              <p class="mt-1">
-                MOX-Sensoren messen kein reines CO₂, sondern ein Gemisch
-                verschiedener Gase. Der angezeigte Wert ist daher eine
-                Schätzgrösse und beeinflusst die Validity unserer Messung.
-              </p>
             </div>
 
             <div class="py-3">
@@ -284,7 +278,7 @@ function selectChapter(chapterId) {
         </div>
 
         <div class="border-t border-slate-200 pt-4">
-          <h3 class="font-semibold text-slate-800">Messeinheit</h3>
+          <h3 class="font-semibold text-slate-800">Masseinheit</h3>
           <p class="mt-1">
             Feinstaub wird in µg/m³ (Mikrogramm pro Kubikmeter Luft) gemessen.
           </p>
@@ -345,28 +339,16 @@ function selectChapter(chapterId) {
                 <li>Ein Laserstrahl trifft auf die angesaugte Luft.</li>
                 <li>
                   Partikel in der Luft streuen das Licht in verschiedene
-                  Richtungen.
+                  Richtungen (Mie-Streuung).
                 </li>
                 <li>
                   Ein Photodetektor misst die Intensität des gestreuten Lichts.
                 </li>
                 <li>
-                  Aus der Streuintensität wird auf Anzahl und Grösse der
-                  Partikel geschlossen.
+                  Aus der Streuintensität und Winkelverteilung wird auf Anzahl
+                  und Grösse der Partikel geschlossen.
                 </li>
               </ul>
-            </div>
-
-            <div class="py-3 text-slate-700">
-              <p class="font-semibold text-slate-900">
-                Physikalischer Hintergrund: Mie-Streuung
-              </p>
-              <p class="mt-1">
-                Wenn Partikel ähnlich gross wie die Wellenlänge des Lichts sind,
-                tritt Mie-Streuung auf. Die Winkelverteilung des gestreuten
-                Lichts hängt von Partikelgrösse und Form ab. So kann der Sensor
-                zwischen PM1, PM2.5 und PM10 unterscheiden.
-              </p>
             </div>
           </div>
         </div>
@@ -584,12 +566,6 @@ function selectChapter(chapterId) {
               </tbody>
             </table>
           </div>
-
-          <p class="mt-3">
-            Für unser Projekt messen wir nur Niederfrequenzquellen im Alltag
-            (Steckdosen, Kabel, Geräte, Züge). Für WLAN, Mobilfunk oder
-            Bluetooth wäre ein separates Hochfrequenz-Messgerät nötig.
-          </p>
           <p class="mt-2">
             Wichtiges Validity-Argument: Das Gerät misst zuverlässig, aber nur
             einen Teil des elektromagnetischen Spektrums, das uns im Alltag
@@ -655,7 +631,7 @@ function selectChapter(chapterId) {
         </div>
 
         <div class="border-t border-slate-200 pt-4">
-          <h3 class="font-semibold text-slate-800">Messeinheiten</h3>
+          <h3 class="font-semibold text-slate-800">Masseinheiten</h3>
           <div
             class="mt-2 overflow-x-auto rounded-lg border border-slate-200 bg-white"
           >
@@ -827,7 +803,7 @@ function selectChapter(chapterId) {
       class="rounded-xl border border-slate-200 bg-slate-50 p-4 sm:p-5"
     >
       <h2 class="text-center text-lg font-semibold text-slate-900">
-        4. Lärm - Schalldruckpegel
+        Lärm - Schalldruckpegel
       </h2>
 
       <div class="mt-4 space-y-4 text-base leading-7 text-slate-700">
@@ -854,11 +830,11 @@ function selectChapter(chapterId) {
         <div class="border-t border-slate-200 pt-4">
           <h3 class="font-semibold text-slate-800">Was bedeutet das?</h3>
           <ul class="mt-2 list-disc space-y-1 pl-5">
-            <li>+10 dB = 10x mehr Schalldruck</li>
-            <li>+20 dB = 100x mehr Schalldruck</li>
+            <li>+20 dB = 10x mehr Schalldruck</li>
+            <li>+40 dB = 100x mehr Schalldruck</li>
             <li>
-              80 dB ist nicht doppelt so laut wie 40 dB, sondern rund 100-mal
-              lauter.
+              80 dB klingt für das Ohr etwa 16x lauter als 40 dB hat aber
+              100-mal mehr Schalldruck.
             </li>
           </ul>
         </div>
