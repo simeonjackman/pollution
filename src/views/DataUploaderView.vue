@@ -135,41 +135,44 @@ const showMap = ref(false);
 const SENSOR_MAP = {
   "69cf8fb591c0af00075d3ce8": [
     {
-      name: "Luftverschmutzung (Mikrogramm pro Kubikmeter)",
+      name: "Luftverschmutzung PM 2.5 (Mikrogramm pro Kubikmeter)",
       id: "69cf8fb591c0af00075d3ce9",
     },
     { name: "Lärmverschmutzung (db)", id: "69cf8fb591c0af00075d3cea" },
     {
-      name: "Elektrisches Feld (Volt pro Meter)",
+      name: "Elektrisches Feld 5-100 Hz (Volt pro Meter)",
       id: "69cf8fb591c0af00075d3ceb",
     },
-    { name: "Magnetisches Feld (nT)", id: "69cf8fb591c0af00075d3cec" },
+    { name: "Magnetisches Feld 5-100 Hz (nT)", id: "69cf8fb591c0af00075d3cec" },
     { name: "CO2 (ppm)", id: "69cf8fb591c0af00075d3ced" },
   ],
   "69cf906291c0af00075e44e3": [
     {
-      name: "Luftverschmutzung (Mikrogramm pro Kubikmeter)",
+      name: "Luftverschmutzung PM 2.5 (Mikrogramm pro Kubikmeter)",
       id: "69cf906291c0af00075e44e4",
     },
     { name: "Lärmverschmutzung (db)", id: "69cf906291c0af00075e44e5" },
     {
-      name: "Elektrisches Feld (Volt pro Meter)",
+      name: "Elektrisches Feld 5-100 Hz (Volt pro Meter)",
       id: "69cf906291c0af00075e44e6",
     },
-    { name: "Magnetisches Feld (nT)", id: "69cf906291c0af00075e44e7" },
+    {
+      name: "Magnetisches Feld 5-100 Hz (nT) ",
+      id: "69cf906291c0af00075e44e7",
+    },
     { name: "CO2 (ppm)", id: "69cf906291c0af00075e44e8" },
   ],
   "69cf9aa991c0af00076e356c": [
     {
-      name: "Luftverschmutzung (Mikrogramm pro Kubikmeter)",
+      name: "Luftverschmutzung PM 2.5 (Mikrogramm pro Kubikmeter)",
       id: "69cf9aa991c0af00076e356d",
     },
     { name: "Lärmverschmutzung (db)", id: "69cf9aa991c0af00076e356e" },
     {
-      name: "Elektrisches Feld (Volt pro Meter)",
+      name: "Elektrisches Feld 5-100 Hz (Volt pro Meter)",
       id: "69cf9aa991c0af00076e356f",
     },
-    { name: "Magnetisches Feld (nT)", id: "69cf9aa991c0af00076e3570" },
+    { name: "Magnetisches Feld 5-100 Hz (nT)", id: "69cf9aa991c0af00076e3570" },
     { name: "CO2 (ppm)", id: "69cf9aa991c0af00076e3571" },
   ],
 };

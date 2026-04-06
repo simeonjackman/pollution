@@ -1,0 +1,242 @@
+[
+  {
+    "senseBoxId": "69cf8fb591c0af00075d3ce8",
+    "value": 62.4,
+    "createdAt": "2026-04-02T07:56:00Z",
+    "measurement": "messung_1",
+    "metric": "noise_db",
+    "sensor": "69cf8fb591c0af00075d3cea"
+  },
+  {
+    "senseBoxId": "69cf8fb591c0af00075d3ce8",
+    "value": 0,
+    "createdAt": "2026-04-02T07:56:00Z",
+    "measurement": "messung_1",
+    "metric": "pm25_ug_m3",
+    "sensor": "69cf8fb591c0af00075d3ce9"
+  },
+  {
+    "senseBoxId": "69cf8fb591c0af00075d3ce8",
+    "value": 396,
+    "createdAt": "2026-04-02T07:56:00Z",
+    "measurement": "messung_1",
+    "metric": "ef_total_v_m",
+    "sensor": "69cf8fb591c0af00075d3ceb"
+  },
+  {
+    "senseBoxId": "69cf8fb591c0af00075d3ce8",
+    "value": 104,
+    "createdAt": "2026-04-02T07:56:00Z",
+    "measurement": "messung_1",
+    "metric": "mf_total_nt",
+    "sensor": "69cf8fb591c0af00075d3cec"
+  },
+  {
+    "senseBoxId": "69cf8fb591c0af00075d3ce8",
+    "value": 401,
+    "createdAt": "2026-04-02T07:56:00Z",
+    "measurement": "messung_1",
+    "metric": "co2_ppm",
+    "sensor": "69cf8fb591c0af00075d3ced"
+  },
+  {
+    "senseBoxId": "69cf8fb591c0af00075d3ce8",
+    "value": 59,
+    "createdAt": "2026-04-02T15:38:00Z",
+    "measurement": "messung_2",
+    "metric": "noise_db",
+    "sensor": "69cf8fb591c0af00075d3cea"
+  },
+  {
+    "senseBoxId": "69cf8fb591c0af00075d3ce8",
+    "value": 2,
+    "createdAt": "2026-04-02T15:38:00Z",
+    "measurement": "messung_2",
+    "metric": "pm25_ug_m3",
+    "sensor": "69cf8fb591c0af00075d3ce9"
+  },
+  {
+    "senseBoxId": "69cf8fb591c0af00075d3ce8",
+    "value": 401,
+    "createdAt": "2026-04-02T15:38:00Z",
+    "measurement": "messung_2",
+    "metric": "ef_total_v_m",
+    "sensor": "69cf8fb591c0af00075d3ceb"
+  },
+  {
+    "senseBoxId": "69cf8fb591c0af00075d3ce8",
+    "value": 107,
+    "createdAt": "2026-04-02T15:38:00Z",
+    "measurement": "messung_2",
+    "metric": "mf_total_nt",
+    "sensor": "69cf8fb591c0af00075d3cec"
+  },
+  {
+    "senseBoxId": "69cf8fb591c0af00075d3ce8",
+    "value": 405,
+    "createdAt": "2026-04-02T15:38:00Z",
+    "measurement": "messung_2",
+    "metric": "co2_ppm",
+    "sensor": "69cf8fb591c0af00075d3ced"
+  },
+  {
+    "senseBoxId": "69cf906291c0af00075e44e3",
+    "value": 77.9,
+    "createdAt": "2026-04-02T07:56:00Z",
+    "measurement": "messung_1",
+    "metric": "noise_db",
+    "sensor": "69cf906291c0af00075e44e5"
+  },
+  {
+    "senseBoxId": "69cf906291c0af00075e44e3",
+    "value": 4,
+    "createdAt": "2026-04-02T07:56:00Z",
+    "measurement": "messung_1",
+    "metric": "pm25_ug_m3",
+    "sensor": "69cf906291c0af00075e44e4"
+  },
+  {
+    "senseBoxId": "69cf906291c0af00075e44e3",
+    "value": 1.9,
+    "createdAt": "2026-04-02T07:56:00Z",
+    "measurement": "messung_1",
+    "metric": "ef_total_v_m",
+    "sensor": "69cf906291c0af00075e44e6"
+  },
+  {
+    "senseBoxId": "69cf906291c0af00075e44e3",
+    "value": 38,
+    "createdAt": "2026-04-02T07:56:00Z",
+    "measurement": "messung_1",
+    "metric": "mf_total_nt",
+    "sensor": "69cf906291c0af00075e44e7"
+  },
+  {
+    "senseBoxId": "69cf906291c0af00075e44e3",
+    "value": 402,
+    "createdAt": "2026-04-02T07:56:00Z",
+    "measurement": "messung_1",
+    "metric": "co2_ppm",
+    "sensor": "69cf906291c0af00075e44e8"
+  },
+  {
+    "senseBoxId": "69cf906291c0af00075e44e3",
+    "value": 82.5,
+    "createdAt": "2026-04-02T15:38:00Z",
+    "measurement": "messung_2",
+    "metric": "noise_db",
+    "sensor": "69cf906291c0af00075e44e5"
+  },
+  {
+    "senseBoxId": "69cf906291c0af00075e44e3",
+    "value": 12,
+    "createdAt": "2026-04-02T15:38:00Z",
+    "measurement": "messung_2",
+    "metric": "pm25_ug_m3",
+    "sensor": "69cf906291c0af00075e44e4"
+  },
+  {
+    "senseBoxId": "69cf906291c0af00075e44e3",
+    "value": 2.1,
+    "createdAt": "2026-04-02T15:38:00Z",
+    "measurement": "messung_2",
+    "metric": "ef_total_v_m",
+    "sensor": "69cf906291c0af00075e44e6"
+  },
+  {
+    "senseBoxId": "69cf906291c0af00075e44e3",
+    "value": 40,
+    "createdAt": "2026-04-02T15:38:00Z",
+    "measurement": "messung_2",
+    "metric": "mf_total_nt",
+    "sensor": "69cf906291c0af00075e44e7"
+  },
+  {
+    "senseBoxId": "69cf906291c0af00075e44e3",
+    "value": 418,
+    "createdAt": "2026-04-02T15:38:00Z",
+    "measurement": "messung_2",
+    "metric": "co2_ppm",
+    "sensor": "69cf906291c0af00075e44e8"
+  },
+  {
+    "senseBoxId": "69cf9aa991c0af00076e356c",
+    "value": 72.4,
+    "createdAt": "2026-04-02T07:56:00Z",
+    "measurement": "messung_1",
+    "metric": "noise_db",
+    "sensor": "69cf9aa991c0af00076e356e"
+  },
+  {
+    "senseBoxId": "69cf9aa991c0af00076e356c",
+    "value": 2,
+    "createdAt": "2026-04-02T07:56:00Z",
+    "measurement": "messung_1",
+    "metric": "pm25_ug_m3",
+    "sensor": "69cf9aa991c0af00076e356d"
+  },
+  {
+    "senseBoxId": "69cf9aa991c0af00076e356c",
+    "value": 2,
+    "createdAt": "2026-04-02T07:56:00Z",
+    "measurement": "messung_1",
+    "metric": "ef_total_v_m",
+    "sensor": "69cf9aa991c0af00076e356f"
+  },
+  {
+    "senseBoxId": "69cf9aa991c0af00076e356c",
+    "value": 56,
+    "createdAt": "2026-04-02T07:56:00Z",
+    "measurement": "messung_1",
+    "metric": "mf_total_nt",
+    "sensor": "69cf9aa991c0af00076e3570"
+  },
+  {
+    "senseBoxId": "69cf9aa991c0af00076e356c",
+    "value": 414,
+    "createdAt": "2026-04-02T07:56:00Z",
+    "measurement": "messung_1",
+    "metric": "co2_ppm",
+    "sensor": "69cf9aa991c0af00076e3571"
+  },
+  {
+    "senseBoxId": "69cf9aa991c0af00076e356c",
+    "value": 76,
+    "createdAt": "2026-04-02T15:38:00Z",
+    "measurement": "messung_2",
+    "metric": "noise_db",
+    "sensor": "69cf9aa991c0af00076e356e"
+  },
+  {
+    "senseBoxId": "69cf9aa991c0af00076e356c",
+    "value": 9,
+    "createdAt": "2026-04-02T15:38:00Z",
+    "measurement": "messung_2",
+    "metric": "pm25_ug_m3",
+    "sensor": "69cf9aa991c0af00076e356d"
+  },
+  {
+    "senseBoxId": "69cf9aa991c0af00076e356c",
+    "value": 2.2,
+    "createdAt": "2026-04-02T15:38:00Z",
+    "measurement": "messung_2",
+    "metric": "ef_total_v_m",
+    "sensor": "69cf9aa991c0af00076e356f"
+  },
+  {
+    "senseBoxId": "69cf9aa991c0af00076e356c",
+    "value": 58,
+    "createdAt": "2026-04-02T15:38:00Z",
+    "measurement": "messung_2",
+    "metric": "mf_total_nt",
+    "sensor": "69cf9aa991c0af00076e3570"
+  },
+  {
+    "senseBoxId": "69cf9aa991c0af00076e356c",
+    "value": 415,
+    "createdAt": "2026-04-02T15:38:00Z",
+    "measurement": "messung_2",
+    "metric": "co2_ppm",
+    "sensor": "69cf9aa991c0af00076e3571"
+  }
+]
