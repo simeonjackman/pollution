@@ -326,11 +326,6 @@ watch(selectedRangeId, () => {
         class="list-decimal space-y-2 pl-5 text-base leading-7 text-slate-700"
       >
         <li>
-          Welche Faktoren können dazu führen, dass gemessene Wert fehler
-          aufweisen? Welche konkreten Faktoren sind euch beim Messen
-          aufgefallen?
-        </li>
-        <li>
           Ab wann kann man auf Basis der gemessenen Werte eine verlässliche
           Aussage treffen? Begründe deine Antwort mit Blick auf Anzahl, Streuung
           und Zeitraum der Daten.
