@@ -321,26 +321,17 @@ watch(selectedRangeId, () => {
       class="space-y-3 rounded-xl border border-slate-200 bg-slate-50 p-4"
       aria-label="Diskussion zur Datenanalyse"
     >
-      <h2 class="text-base font-semibold text-slate-900">Diskussionsfragen</h2>
+      <h2 class="text-base font-semibold text-slate-900">Fragen zur Datenanalyse</h2>
       <ol
         class="list-decimal space-y-2 pl-5 text-base leading-7 text-slate-700"
       >
         <li>
-          Ab wann kann man auf Basis der gemessenen Werte eine verlässliche
-          Aussage treffen? Begründe deine Antwort mit Blick auf Anzahl, Streuung
-          und Zeitraum der Daten.
+          Gibt es Unterschiede zwischen den verschiedenen Standorten?
         </li>
         <li>
-          Welche möglichen Verursacher und Einflussfaktoren der Verschmutzung
-          lassen sich aus den Messwerten ableiten (z. B. Industrie)? Nenne
-          mindestens zwei und begründe sie mit Daten, falls möglich.
+          Gibt es Veränderungen über die Zeit?
         </li>
-        <li>
-          Welche Methoden zur zukünftigen Vermeidung von Verschmutzung hältst du
-          für sinnvoll (z. B. Verkehrskonzepte, Filtertechnik,
-          Verhaltensänderungen)? Recherchiere und ordne jede Methode nach
-          erwarteter Wirkung und Umsetzbarkeit.
-        </li>
+
       </ol>
     </section>
 
