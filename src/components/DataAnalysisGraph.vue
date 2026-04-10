@@ -121,18 +121,6 @@ function toPath(values) {
   return path.trim();
 }
 
-const yTicks = computed(() => {
-  const tickCount = 5;
-  return Array.from({ length: tickCount }, (_, idx) => {
-    const ratio = idx / (tickCount - 1);
-    const value = yMax.value - ratio * yRange.value;
-    return {
-      value,
-      y: yAt(value),
-    };
-  });
-});
-
 const activePointDetails = computed(() => {
   if (!activePoint.value) {
     return null;
@@ -161,13 +149,17 @@ const activePointDetails = computed(() => {
   };
 });
 
-function setActivePoint(seriesName, index) {
-  activePoint.value = { seriesName, index };
-}
-
-function clearActivePoint() {
-  activePoint.value = null;
-}
+const yTicks = computed(() => {
+  const tickCount = 5;
+  return Array.from({ length: tickCount }, (_, idx) => {
+    const ratio = idx / (tickCount - 1);
+    const value = yMax.value - ratio * yRange.value;
+    return {
+      value,
+      y: yAt(value),
+    };
+  });
+});
 
 function shouldShowXAxisLabel(index) {
   const total = props.labels.length;
@@ -176,6 +168,14 @@ function shouldShowXAxisLabel(index) {
   }
 
   return index % 2 === 0 || index === total - 1;
+}
+
+function setActivePoint(seriesName, index) {
+  activePoint.value = { seriesName, index };
+}
+
+function clearActivePoint() {
+  activePoint.value = null;
 }
 </script>
 
@@ -289,20 +289,6 @@ function shouldShowXAxisLabel(index) {
       >
         Auswahl entfernen
       </button>
-    </div>
-
-    <div class="grid grid-cols-1 gap-2 sm:grid-cols-2">
-      <div
-        v-for="item in cleanedSeries"
-        :key="`legend-${item.name}`"
-        class="flex items-start gap-2 rounded-lg border border-slate-200 bg-slate-50 px-3 py-2"
-      >
-        <span
-          class="mt-1 inline-block h-3 w-3 rounded-full"
-          :style="{ backgroundColor: item.color }"
-        ></span>
-        <span class="text-sm text-slate-700">{{ item.name }}</span>
-      </div>
     </div>
   </div>
 </template>

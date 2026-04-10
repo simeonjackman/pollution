@@ -317,6 +317,9 @@ watch(selectedRangeId, () => {
 
     <DataAnalysisGraph v-else :labels="chartLabels" :series="chartSeries" />
 
+    <DataDownloadButton group-tag="FHNW-BNE-Projekt" />
+
+    <hr class="border-gray-200" />
     <section
       class="space-y-2 rounded-xl border border-sky-200 bg-sky-50 p-4"
       aria-label="Anleitung für Excel"
@@ -338,6 +341,22 @@ watch(selectedRangeId, () => {
           Zwei Mal weiter, dann fertig stellen drücken. Die Daten sollten nun
           tabellarisch angezeigt werden.
         </li>
+        <li>Auf Reiter Einfügen drücken.</li>
+        <li>Alle Daten markieren, dann PivotTable drücken.</li>
+        <li>Als Feldnamen <i>boxName</i> und <i>sensorTitle</i> wählen.</li>
+        <li>
+          <i>value</i> in das Werte Feld ziehen und auf Mittelwert umstellen.
+        </li>
+        <li>
+          Mit der Funktion PivotChart können die Daten nun visualisiert werden.
+        </li>
+        <li>
+          Bonus: Zur Beantwortung der zweiten Frage müssen die Daten in
+          Zusammenhang mit der Zeit bringen. Versuche dazu die Felder
+          <i>boxName</i>, <i>sensorTitle</i>, <i>value</i> und
+          <i>createdAt</i> sinnvoll in der Pivottabelle anzuwenden und zu
+          visualisieren.
+        </li>
       </ol>
     </section>
 
@@ -355,9 +374,5 @@ watch(selectedRangeId, () => {
         <li>Gibt es Veränderungen über die Zeit?</li>
       </ol>
     </section>
-
-    <hr class="border-gray-200" />
-
-    <DataDownloadButton group-tag="FHNW-BNE-Projekt" />
   </section>
 </template>
