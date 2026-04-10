@@ -328,7 +328,16 @@ watch(selectedRangeId, () => {
         class="list-decimal space-y-1 pl-5 text-base leading-7 text-slate-700"
       >
         <li>Daten herunterladen.</li>
-        <li>In Excel öffnen und speichern (z. B. auf dem Desktop).</li>
+        <li>
+          In Excel öffnen und als .xlsx speichern (z. B. auf dem Desktop).
+        </li>
+        <li>
+          Erste Spalte auswählen, dann auf Reiter Daten ➡️ Text in Spalten.
+        </li>
+        <li>
+          Zwei Mal weiter, dann fertig stellen drücken. Die Daten sollten nun
+          tabellarisch angezeigt werden.
+        </li>
       </ol>
     </section>
 
