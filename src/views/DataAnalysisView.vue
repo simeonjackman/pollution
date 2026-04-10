@@ -318,20 +318,32 @@ watch(selectedRangeId, () => {
     <DataAnalysisGraph v-else :labels="chartLabels" :series="chartSeries" />
 
     <section
+      class="space-y-2 rounded-xl border border-sky-200 bg-sky-50 p-4"
+      aria-label="Anleitung für Excel"
+    >
+      <h2 class="text-base font-semibold text-slate-900">
+        Daten in Excel öffnen
+      </h2>
+      <ol
+        class="list-decimal space-y-1 pl-5 text-base leading-7 text-slate-700"
+      >
+        <li>Daten herunterladen.</li>
+        <li>In Excel öffnen und speichern (z. B. auf dem Desktop).</li>
+      </ol>
+    </section>
+
+    <section
       class="space-y-3 rounded-xl border border-slate-200 bg-slate-50 p-4"
       aria-label="Diskussion zur Datenanalyse"
     >
-      <h2 class="text-base font-semibold text-slate-900">Fragen zur Datenanalyse</h2>
+      <h2 class="text-base font-semibold text-slate-900">
+        Fragen zur Datenanalyse
+      </h2>
       <ol
         class="list-decimal space-y-2 pl-5 text-base leading-7 text-slate-700"
       >
-        <li>
-          Gibt es Unterschiede zwischen den verschiedenen Standorten?
-        </li>
-        <li>
-          Gibt es Veränderungen über die Zeit?
-        </li>
-
+        <li>Gibt es Unterschiede zwischen den verschiedenen Standorten?</li>
+        <li>Gibt es Veränderungen über die Zeit?</li>
       </ol>
     </section>
 
